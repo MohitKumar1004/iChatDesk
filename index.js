@@ -1,6 +1,9 @@
 require('dotenv').config()
+
+const serverPort = process.env.SERVER_PORT
+const clientPort = process.env.CLIENT_PORT
 // Node Server which will handle socket io connection
-const io=require('socket.io')(8000,{cors: {origin:"*"}});
+const io=require('socket.io')(serverPort,{cors: {origin:"*"}});
 // const io=require('socket.io')(process.env.SERVER_PORT,{cors: {origin:"*"}});
 // Storage of User Ids
 const users={}
@@ -36,7 +39,6 @@ const express = require('express')
 const path = require('path')
 
 const app = express()
-const port = 3001
 // const port = process.env.CLIENT_PORT
 
 // folder path is given
@@ -49,6 +51,6 @@ app.get('/', (req, res) => {
 })
 
 // frontend is listened at a different port
-app.listen(port,() => {
-    console.log(`listening on port ${port}`)
+app.listen(clientPort,() => {
+    console.log(`listening on port ${clientPort}`)
 })

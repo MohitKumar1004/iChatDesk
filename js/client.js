@@ -1,5 +1,5 @@
 // Client Socket Creation
-const socket=io('http://localhost:8000');
+const socket=io('http://localhost:3001');
 
 // Get DOM Elements in a respective js variables
 const form=document.getElementById('send-container');
