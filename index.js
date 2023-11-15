@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const serverPort = process.env.SERVER_PORT
-const clientPort = process.env.CLIENT_PORT
+// const clientPort = process.env.CLIENT_PORT
 // Node Server which will handle socket io connection
 const io=require('socket.io')(serverPort,{cors: {origin:"*"}});
 // const io=require('socket.io')(process.env.SERVER_PORT,{cors: {origin:"*"}});
@@ -33,24 +33,24 @@ io.on('connection',socket=>{
 })
 
 // Express helps to create a server
-const express = require('express')
+// const express = require('express')
 
-// path module helps to get files of the files in server
-const path = require('path')
+// // path module helps to get files of the files in server
+// const path = require('path')
 
-const app = express()
-// const port = process.env.CLIENT_PORT
+// const app = express()
+// // const port = process.env.CLIENT_PORT
 
-// folder path is given
-app.use(express.static('./'))
+// // folder path is given
+// app.use(express.static('./'))
 
-// frontend is deployed
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'index.html'))
-    res.sendFile
-})
+// // frontend is deployed
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname,'index.html'))
+//     res.sendFile
+// })
 
-// frontend is listened at a different port
-app.listen(clientPort,() => {
-    console.log(`listening on port ${clientPort}`)
-})
+// // frontend is listened at a different port
+// app.listen(clientPort,() => {
+//     console.log(`listening on port ${clientPort}`)
+// })

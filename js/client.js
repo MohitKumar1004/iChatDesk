@@ -1,5 +1,5 @@
 // Client Socket Creation
-const socket=io('http://localhost:3001');
+const socket=io('https://ichatdesk-api.onrender.com/');
 
 // Get DOM Elements in a respective js variables
 const form=document.getElementById('send-container');
